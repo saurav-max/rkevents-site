@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RKEVENTS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    .swiper-container {
+      width: 100%;
+      height: 300px;
+       overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-700">
+
+ <!-- Hero Section with Background Slideshow -->
+<header class="relative h-screen overflow-hidden">
+  <!-- Slideshow Images -->
+  <div class="absolute top-0 left-0 w-full h-full z-0">
+    <img src="photo-1542042161784-26ab9e041e89.avif" class="hero-bg absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+    <img src="photo-1583878545126-2f1ca0142714.avif" class="hero-bg absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+    <img src="photo-1601482441062-b9f13131f33a.avif " class="hero-bg absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+    <img src="photo-1641279676778-3c94588147fd.avif" class="hero-bg absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+    <img src="photo-1587271636175-90d58cdad458.avif " class="hero-bg absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+    <img src="photo-1641279676778-3c94588147fd.avif " class="hero-bg absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+
+  </div>
+
+  <!-- Overlay Content -->
+  <div class="relative z-10 bg-black bg-opacity-45 h-full flex items-center justify-center text-white">
+    <div class="text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Turning Your Dream Wedding into Reality</h1>
+      <a href="#contact" class="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-full text-lg transition">Book a Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- Slideshow Script -->
+<script>
+  const backgrounds = document.querySelectorAll('.hero-bg');
+  let currentIndex = 0;
+
+  function showBackground(index) {
+    backgrounds.forEach((bg, i) => {
+      bg.style.opacity = i === index ? '1' : '0';
+    });
+  }
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+    showBackground(currentIndex);
+  }, 2000); // every 2 seconds
+
+  // Initialize first image
+  showBackground(currentIndex);
+</script>
+
+
+  <!-- About Us with Team Section -->
+<section class="py-16 px-8 text-center" style="background: linear-gradient(to bottom right, #F9E6CF, #FAF3E0);">
+  <h2 class="text-4xl font-bold mb-4 text-pink-800">Meet Our Team</h2>
+  <p class="max-w-3xl mx-auto mb-12 text-gray-700 text-lg">
+    We are a passionate team of wedding planners who bring your vision to life. With over 5 years of experience, we deliver elegant, seamless, and unforgettable celebrations.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Team Member Card -->
+    <div class="bg-white p-6 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl">
+      <img src="Rahul.jpg" alt="RAHUL YADAV" class="w-28 h-28 object-cover rounded-full mx-auto cursor-pointer hover:scale-105 transition" onclick="openModal('Rahul.jpg')" />
+      <h3 class="text-xl font-semibold mt-4 text-pink-700">RAHUL YADAV</h3>
+      <p class="text-gray-600 text-sm mb-2 italic">Lead Planner</p>
+      <p class="text-gray-700 text-sm mt-2">
+        Oversees the wedding planning from concept to execution. Rahul ensures every element—from logistics to design—aligns seamlessly to create a magical experience.
+      </p>
+    </div>
+
+    <!-- Saurav -->
+    <div class="bg-white p-6 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl">
+      <img src="IMG_20190827_130058.JPG" alt="SAURAV KUMAR" class="w-28 h-28 object-cover rounded-full mx-auto cursor-pointer hover:scale-105 transition" onclick="openModal('IMG_20190827_130058.JPG')" />
+      <h3 class="text-xl font-semibold mt-4 text-pink-700">SAURAV KUMAR</h3>
+      <p class="text-gray-600 text-sm mb-2 italic">Creative Director</p>
+      <p class="text-gray-700 text-sm mt-2">
+        Brings wedding visions to life with unique themes and artistic décor. Saurav curates every detail to reflect the couple’s story and style.
+      </p>
+    </div>
+
+    <!-- Ravi -->
+    <div class="bg-white p-6 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl">
+      <img src="IMG-20190727-WA0032.jpg" alt="RAVI RAJ" class="w-28 h-28 object-cover rounded-full mx-auto cursor-pointer hover:scale-105 transition" onclick="openModal('IMG-20190727-WA0032.jpg')" />
+      <h3 class="text-xl font-semibold mt-4 text-pink-700">RAVI RAJ</h3>
+      <p class="text-gray-600 text-sm mb-2 italic">Event Coordinator</p>
+      <p class="text-gray-700 text-sm mt-2">
+        Ensures seamless execution of every event by handling vendors, timelines, and logistics with care so couples can enjoy their big day.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Enlarged Image -->
+<div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex items-center justify-center">
+  <span class="absolute top-5 right-5 text-white text-3xl cursor-pointer" onclick="closeModal()">×</span>
+  <img id="modalImage" src="" class="max-w-3xl w-full rounded-lg shadow-lg border-4 border-white transition-transform duration-300 scale-95 hover:scale-100" />
+</div>
+
+<script>
+  function openModal(imgSrc) {
+    document.getElementById("modalImage").src = imgSrc;
+    document.getElementById("imageModal").classList.remove("hidden");
+  }
+  function closeModal() {
+    document.getElementById("imageModal").classList.add("hidden");
+  }
+</script>
+<!--about section end here-->
+
+  <!-- Services Section -->
+<section class="py-20 px-8 text-center" style="background-color: #FFAB5B;">
+  <h2 class="text-4xl font-bold mb-12 text-white tracking-wide">Our Signature Services</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    
+    <!-- Service Card -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition duration-300">
+      <img src="wedding.png" alt="Wedding Planning" class="w-16 h-16 mx-auto mb-4" />
+      <h3 class="text-2xl font-semibold text-pink-900 mb-2">Full Wedding Planning</h3>
+      <p class="text-gray-700 text-sm">End-to-end management including budget tracking, vendor liaison, scheduling, and on-site coordination for a stress-free celebration.</p>
+    </div>
+
+    <!-- Service Card -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition duration-300">
+      <img src="wedding-location.png" alt="Venue Selection" class="w-16 h-16 mx-auto mb-4" />
+      <h3 class="text-2xl font-semibold text-pink-900 mb-2">Venue Selection</h3>
+      <p class="text-gray-700 text-sm">Exclusive access to luxury venues—from royal palaces to serene beach resorts—perfectly tailored to your event style.</p>
+    </div>
+
+    <!-- Service Card -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-105 transition duration-300">
+      <img src="christmas-lights.png" alt="Decor Design" class="w-16 h-16 mx-auto mb-4" />
+      <h3 class="text-2xl font-semibold text-pink-900 mb-2">Décor & Design</h3>
+      <p class="text-gray-700 text-sm">Custom styling with floral installations, theme lighting, and curated elements that reflect your personality and dreams.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Packages Section -->
+<section class="py-16 px-8 text-center" style="background-color: #FFEBB2;">
+  <h2 class="text-4xl font-semibold mb-10 text-gray-800">Wedding Packages</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+    <!-- Bronze Package -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">Bronze Package</h3>
+      <p class="text-gray-600 mb-4">Basic coordination & setup</p>
+      <a href="https://www.instagram.com/rk_.event" target="_blank"
+         class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300">
+        Inquire Now
+      </a>
+    </div>
+
+    <!-- Silver Package -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">Silver Package</h3>
+      <p class="text-gray-600 mb-4">Mid-level support with design</p>
+      <a href="https://www.instagram.com/rk_.event" target="_blank"
+         class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300">
+        Inquire Now
+      </a>
+    </div>
+
+    <!-- Gold Package -->
+    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+      <h3 class="text-2xl font-bold text-gray-800 mb-3">Gold Package</h3>
+      <p class="text-gray-600 mb-4">Full planning + luxury themes</p>
+      <a href="https://www.instagram.com/rk_.event" target="_blank"
+         class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300">
+        Inquire Now
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Portfolio Carousel -->
+  <section class="py-16 bg-gray-100 px-8 text-center">
+    <h2 class="text-3xl font-semibold mb-8">Portfolio</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="Screenshot 2025-05-12 113507.png" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="Screenshot 2025-05-12 113507.png" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="Screenshot 2025-05-12 113914.png" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="Screenshot 2025-05-12 113914.png" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="photo-1587271407850-8d438ca9fdf2.avif" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="photo-1542042161784-26ab9e041e89.avif" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="photo-1587271407850-8d438ca9fdf2.avif" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="Screenshot 2025-05-12 113507.png" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="photo-1610173827002-62c0f1f05d04.avif" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+        <div class="swiper-slide"><img src="photo-1641279676778-3c94588147fd.avif" alt="Wedding" class="rounded shadow w-full h-64 object-cover"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+<section class="py-20 px-6 bg-gradient-to-br from-pink-50 to-yellow-50 text-center">
+  <h2 class="text-4xl font-bold text-pink-700 mb-6">What Our Customers Say</h2>
+  <p class="text-gray-600 mb-10 max-w-2xl mx-auto">Over 500+ couples trusted RK Events. Here’s what some of them have to say:</p>
+
+  <div class="swiper-container testimonial-swiper max-w-5xl mx-auto">
+    <div class="swiper-wrapper">
+      <!-- Testimonial Slide Example -->
+      <div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+        <p class="text-gray-700 italic mb-4">"Shaadi invitation website was classy & simple. Budget mein sab set ho gaya!"</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/166/166538.png" alt="Happy Customer" class="w-12 h-12 mb-2">
+        <div class="flex justify-center mb-2">
+          <span class="text-yellow-400 text-xl">★★★★★</span>
+        </div>
+        <h4 class="font-semibold text-pink-600">Anjali & Ramesh</h4>
+      </div>
+      <!-- Repeat 19 more testimonials similarly -->
+      <div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+        <p class="text-gray-700 italic mb-4">"My relatives were amazed by the invite site, and we spent less than a video editor!"</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/166/166538.png" alt="Happy Customer" class="w-12 h-12 mb-2">
+        <div class="flex justify-center mb-2">
+          <span class="text-yellow-400 text-xl">★★★★★</span>
+        </div>
+        <h4 class="font-semibold text-pink-600">Sanjay & Pooja</h4>
+      </div>
+      <div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"The design looked premium and modern. Everyone thought we spent a fortune!"</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/166/166538.png" alt="Happy Customer" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★★</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Ritika & Arjun</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"The website felt very personal and easy to share with our guests."</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/194/194935.png" alt="Satisfied Bride" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★☆</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Rohit & Neha</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"Elegant, clean and so easy to use. A hit among our family!"</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Smiling User" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★★</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Sunil & Kavita</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"Our parents loved it. Even dadi said it was easier than reading a card!"</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Family Love" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★☆</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Vikas & Deepa</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"Best decision ever. No printing, no delivery tension – just a link!"</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Tech-Friendly Couple" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★★</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Ankit & Shreya</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"We customized it in 2 days and sent it to 200 people instantly."</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/194/194931.png" alt="Easy Experience" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★★</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Karan & Tanya</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"Affordable and looked premium. Just what middle-class families want."</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Happy Groom" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★☆</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Ramesh & Sneha</h4>
+</div>
+
+<div class="swiper-slide bg-white rounded-2xl shadow-lg p-6 mx-2 flex flex-col items-center">
+  <p class="text-gray-700 italic mb-4">"Zero delivery cost and no paper waste. Loved the concept!"</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Environmentally Aware" class="w-12 h-12 mb-2">
+  <div class="flex justify-center mb-2">
+    <span class="text-yellow-400 text-xl">★★★★★</span>
+  </div>
+  <h4 class="font-semibold text-pink-600">Mehul & Priya</h4>
+</div>
+
+      <!-- Add additional testimonial cards here with same structure -->
+    </div>
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination mt-6"></div>
+  </div>
+</section>
+
+<!-- Swiper Init Script -->
+<script>
+  new Swiper('.testimonial-swiper', {
+    loop: true,
+    autoplay: { delay: 3500 },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+
+
+  <!-- Our Products -->
+  <!-- Products Section: Wedding Invite Websites -->
+<section class="py-20 px-6 bg-white text-center">
+  <h2 class="text-4xl font-bold text-pink-700 mb-4">Our Wedding Invite Website Designs</h2>
+  <p class="max-w-2xl mx-auto text-gray-600 mb-10">We craft beautiful, emotionally touching, and affordable digital wedding invites that replace boring forwarded videos. Your story deserves better. Make your marriage announcement unique.</p>
+
+  <!-- Highlighted Message -->
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <div class="bg-pink-50 rounded-xl shadow-lg p-6">
+      <h3 class="text-2xl font-semibold text-pink-800 mb-2">💡 Why Choose Us?</h3>
+      <ul class="text-left list-disc list-inside text-gray-700">
+        <li>Personalized wedding website with RSVP, love story & gallery</li>
+        <li>Easy to share – just one link</li>
+        <li>Crafted with emotion and elegance, not generic animations</li>
+        <li>Affordable – starting from just ₹499</li>
+      </ul>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-xl p-4">
+      <img src="web invite.png" alt="Wedding Website Example" class="rounded-xl shadow mb-4 w-full object-cover">
+       </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="max-w-5xl mx-auto mb-12">
+    <h3 class="text-2xl font-semibold text-pink-700 mb-4">📊 Traditional WhatsApp Video vs Our Digital Invite</h3>
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-left border border-gray-200">
+        <thead>
+          <tr class="bg-pink-100 text-pink-800">
+            <th class="py-2 px-4 border">Feature</th>
+            <th class="py-2 px-4 border">Traditional Video</th>
+            <th class="py-2 px-4 border">Our Invite Website</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-t">
+            <td class="py-2 px-4 border">Uniqueness</td>
+            <td class="py-2 px-4 border">Generic templates</td>
+            <td class="py-2 px-4 border">Fully personalized</td>
+          </tr>
+          <tr class="border-t">
+            <td class="py-2 px-4 border">RSVP Collection</td>
+            <td class="py-2 px-4 border">Not possible</td>
+            <td class="py-2 px-4 border">Built-in RSVP form</td>
+          </tr>
+          <tr class="border-t">
+            <td class="py-2 px-4 border">Cost</td>
+            <td class="py-2 px-4 border">₹1500 - ₹3000</td>
+            <td class="py-2 px-4 border">Starts at ₹499</td>
+          </tr>
+          <tr class="border-t">
+            <td class="py-2 px-4 border">Viewer Engagement</td>
+            <td class="py-2 px-4 border">Often skipped</td>
+            <td class="py-2 px-4 border">Interactive & memorable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Call-to-action -->
+  <div class="bg-pink-100 p-6 rounded-xl max-w-xl mx-auto">
+    <h4 class="text-xl font-semibold text-pink-800 mb-2">Ready to make your shaadi invite unforgettable?</h4>
+    <p class="text-gray-700 mb-4">Book your wedding invite site today and get delivery in just 48 hours!</p>
+    <a href="https://wa.me/7635014550" target="_blank" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-6 rounded-full transition">Message Us on WhatsApp</a>
+  </div>
+</section>
+
+    <div class="flex flex-col md:flex-row gap-8">
+
+      <!-- Contact Cards -->
+      <div class="w-full md:w-1/3 bg-white p-6 md:p-8 rounded-xl shadow-xl" data-aos="fade-right">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center border-b pb-2">📞 Direct Contacts</h3>
+        <ul class="space-y-4 text-base text-gray-700">
+          <li class="flex justify-between">
+            <span>Rahul Yadav</span>
+            <a href="tel:7970777399" class="text-pink-600 hover:text-pink-800 transition">7970777399</a>
+          </li>
+          <li class="flex justify-between">
+            <span>Saurav Kumar</span>
+            <a href="tel:7635014550" class="text-pink-600 hover:text-pink-800 transition">7635014550</a>
+          </li>
+          <li class="flex justify-between">
+            <span>Ravi Raj</span>
+            <a href="tel:8529757818" class="text-pink-600 hover:text-pink-800 transition">8529757818</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm" action="https://formsubmit.co/sauravkumar63345@email.com" method="POST" class="w-full md:w-2/3 bg-white p-6 md:p-8 rounded-xl shadow-xl" data-aos="fade-left">
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Event Date</label>
+            <input type="date" name="event_date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"></textarea>
+          </div>
+        </div>
+        <button id="submitBtn" type="submit" disabled class="mt-6 w-full bg-red-500 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 disabled:cursor-not-allowed">
+          Send Inquiry
+        </button>
+      </form>
+    </div>
+
+    <!-- Alert -->
+    <div id="successAlert" class="hidden mt-6 text-center">
+      <p class="text-green-700 bg-green-100 inline-block px-6 py-2 rounded shadow">✅ Message sent successfully!</p>
+    </div>
+  </div>
+</section>
+
+<!-- JS: Form Validation & Success Alert -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const alertBox = document.getElementById('successAlert');
+    const inputs = form.querySelectorAll('input, textarea');
+
+    const checkInputs = () => {
+      const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+      submitBtn.disabled = !allFilled;
+      submitBtn.classList.toggle('bg-green-600', allFilled);
+      submitBtn.classList.toggle('hover:bg-green-700', allFilled);
+      submitBtn.classList.toggle('bg-red-500', !allFilled);
+    };
+
+    inputs.forEach(input => input.addEventListener('input', checkInputs));
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // remove in production
+      form.reset();
+      checkInputs();
+      alertBox.classList.remove('hidden');
+      setTimeout(() => alertBox.classList.add('hidden'), 5000);
+    });
+  });
+</script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+
+
+
+
+  <!-- WhatsApp Chat -->
+  <a href="https://wa.me/7635014550" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.72 11.06c-.28-.14-1.64-.8-1.89-.9-.25-.1-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.2-.44-2.28-1.4-.84-.74-1.4-1.64-1.56-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.3.42-.45.14-.14.18-.24.27-.4.1-.18.05-.34-.02-.47-.07-.14-.61-1.45-.83-1.99-.22-.54-.45-.47-.61-.47s-.33-.02-.51-.02c-.18 0-.47.06-.72.3-.25.25-.96.93-.96 2.27s.99 2.63 1.14 2.82c.14.18 1.95 2.97 4.74 4.17.66.28 1.18.44 1.58.56.66.2 1.26.18 1.74.11.53-.08 1.64-.67 1.87-1.32.23-.66.23-1.22.16-1.33-.08-.1-.28-.16-.58-.3z" />
+    </svg>
+
+    <!-- Instagram Chat -->
+<a href="https://www.instagram.com/rk_.event" target="_blank"
+   class="fixed bottom-20 right-6 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white p-4 rounded-full shadow-lg">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.3 1 .7 1.4 1.4.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.3.6-.7 1-1.4 1.4-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.3-1-.7-1.4-1.4-.2-.4-.4-1.1-.5-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.3-.6.7-1 1.4-1.4.4-.2 1.1-.4 2.3-.5 1.3-.1 1.7-.1 4.9-.1zm0-2.2C8.7 0 8.3 0 7 .1 5.5.2 4.3.5 3.4 1.1c-.9.5-1.6 1.2-2.1 2.1C.6 4.3.3 5.5.2 7 .1 8.3 0 8.7 0 12s.1 3.7.2 5c.1 1.5.4 2.7 1.1 3.6.5.9 1.2 1.6 2.1 2.1.9.6 2.1.9 3.6 1.1 1.3.1 1.7.2 5 .2s3.7-.1 5-.2c1.5-.1 2.7-.4 3.6-1.1.9-.5 1.6-1.2 2.1-2.1.6-.9.9-2.1 1.1-3.6.1-1.3.2-1.7.2-5s-.1-3.7-.2-5c-.1-1.5-.4-2.7-1.1-3.6-.5-.9-1.2-1.6-2.1-2.1-.9-.6-2.1-.9-3.6-1.1C15.7.1 15.3 0 12 0z"/>
+    <path d="M12 5.8A6.2 6.2 0 1 0 12 18.2 6.2 6.2 0 1 0 12 5.8zm0 10.2A4 4 0 1 1 12 8a4 4 0 0 1 0 8.1z"/>
+    <circle cx="18.4" cy="5.6" r="1.4"/>
+  </svg>
+</a>
+
+  </a>
+
+  
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>&copy; 2025 RK EVENTS. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: { delay: 3000 },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  </script>
+
+</body>
+</html>
