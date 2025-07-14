@@ -73,62 +73,85 @@
 </script>
 
 
-  <!-- About Us with Team Section -->
-<section class="py-16 px-8 text-center" style="background: linear-gradient(to bottom right, #F9E6CF, #FAF3E0);">
-  <h2 class="text-4xl font-bold mb-4 text-pink-800">Meet Our Team</h2>
-  <p class="max-w-3xl mx-auto mb-12 text-gray-700 text-lg">
-    We are a passionate team of wedding planners who bring your vision to life. With over 5 years of experience, we deliver elegant, seamless, and unforgettable celebrations.
-  </p>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-    <!-- Team Member Card -->
-    <div class="bg-white p-6 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl">
-      <img src="Rahul.jpg" alt="RAHUL YADAV" class="w-28 h-28 object-cover rounded-full mx-auto cursor-pointer hover:scale-105 transition" onclick="openModal('Rahul.jpg')" />
-      <h3 class="text-xl font-semibold mt-4 text-pink-700">RAHUL YADAV</h3>
-      <p class="text-gray-600 text-sm mb-2 italic">Lead Planner</p>
-      <p class="text-gray-700 text-sm mt-2">
-        Oversees the wedding planning from concept to execution. Rahul ensures every element—from logistics to design—aligns seamlessly to create a magical experience.
+<section class="py-12 px-6 max-w-6xl mx-auto">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    
+    <!-- Vision -->
+    <div>
+      <h2 class="text-3xl font-bold text-pink-800 mb-4">Our Vision</h2>
+      <p class="text-gray-700 mb-4 text-base">
+        We aim to redefine weddings by making them more meaningful, creative, and effortless. Our goal is to provide unforgettable memories for our clients by blending tradition with modern elegance.
+      </p>
+      <p class="text-gray-700 text-base">
+        The future of our company is focused on expanding across India with smart technology and personalized event experiences—ensuring every celebration is one of a kind.
       </p>
     </div>
 
-    <!-- Saurav -->
-    <div class="bg-white p-6 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl">
-      <img src="IMG_20190827_130058.JPG" alt="SAURAV KUMAR" class="w-28 h-28 object-cover rounded-full mx-auto cursor-pointer hover:scale-105 transition" onclick="openModal('IMG_20190827_130058.JPG')" />
-      <h3 class="text-xl font-semibold mt-4 text-pink-700">SAURAV KUMAR</h3>
-      <p class="text-gray-600 text-sm mb-2 italic">Creative Director</p>
-      <p class="text-gray-700 text-sm mt-2">
-        Brings wedding visions to life with unique themes and artistic décor. Saurav curates every detail to reflect the couple’s story and style.
+    <!-- Rahul Card -->
+    <div class="bg-white p-6 rounded-xl shadow-lg max-w-sm mx-auto">
+      <img src="Rahul.jpeg" alt="Rahul Kumar" class="w-28 h-28 object-cover rounded-full mx-auto border-4 border-pink-700 mb-3" />
+      <h3 class="text-xl font-semibold text-pink-700 text-center">Rahul Kumar</h3>
+      <p class="text-gray-600 text-sm italic text-center">Founder & CEO</p>
+      <p class="text-gray-700 text-sm mt-3 text-center">
+        The driving force behind our creative and strategic planning. Rahul leads our team with expertise and passion.
       </p>
     </div>
 
-    <!-- Ravi -->
-    <div class="bg-white p-6 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-2 hover:shadow-2xl">
-      <img src="IMG-20190727-WA0032.jpg" alt="RAVI RAJ" class="w-28 h-28 object-cover rounded-full mx-auto cursor-pointer hover:scale-105 transition" onclick="openModal('IMG-20190727-WA0032.jpg')" />
-      <h3 class="text-xl font-semibold mt-4 text-pink-700">RAVI RAJ</h3>
-      <p class="text-gray-600 text-sm mb-2 italic">Event Coordinator</p>
-      <p class="text-gray-700 text-sm mt-2">
-        Ensures seamless execution of every event by handling vendors, timelines, and logistics with care so couples can enjoy their big day.
-      </p>
-    </div>
+  </div>
+
+  <!-- View Team Button -->
+  <div class="text-center mt-8">
+    <button onclick="toggleTeam()" class="px-6 py-2 bg-pink-700 text-white rounded-full text-sm hover:bg-pink-800 transition">
+      View Team Members
+    </button>
   </div>
 </section>
 
-<!-- Modal for Enlarged Image -->
-<div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex items-center justify-center">
-  <span class="absolute top-5 right-5 text-white text-3xl cursor-pointer" onclick="closeModal()">×</span>
-  <img id="modalImage" src="" class="max-w-3xl w-full rounded-lg shadow-lg border-4 border-white transition-transform duration-300 scale-95 hover:scale-100" />
-</div>
+<!-- Hidden Team Section -->
+<section id="teamSection" class="py-10 px-4 hidden">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto text-center">
 
+    <!-- Upanshu Singh -->
+    <div class="bg-white p-4 rounded-xl shadow-md">
+      <img src="upanshu.jpeg" alt="Upanshu Singh" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
+      <h3 class="text-md font-semibold text-pink-700">Upanshu Singh</h3>
+      <p class="text-gray-600 text-xs italic">General Manager</p>
+      <p class="text-gray-700 text-sm mt-1">Ensures seamless execution across all event sections.</p>
+    </div>
+
+    <!-- Sahil Kumar -->
+    <div class="bg-white p-4 rounded-xl shadow-md">
+      <img src="sahil.jpeg" alt="Sahil Kumar" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
+      <h3 class="text-md font-semibold text-pink-700">Sahil Kumar</h3>
+      <p class="text-gray-600 text-xs italic">Management</p>
+      <p class="text-gray-700 text-sm mt-1">Manages everything from logistics to client experience.</p>
+    </div>
+
+    <!-- Ravi Raj -->
+    <div class="bg-white p-4 rounded-xl shadow-md">
+      <img src="ravi.jpeg" alt="Ravi Raj" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
+      <h3 class="text-md font-semibold text-pink-700">Ravi Raj</h3>
+      <p class="text-gray-600 text-xs italic">Finance Head</p>
+      <p class="text-gray-700 text-sm mt-1">Oversees budgets and ensures financial clarity.</p>
+    </div>
+
+    <!-- Saurav Kumar -->
+    <div class="bg-white p-4 rounded-xl shadow-md col-span-full sm:col-span-2 md:col-span-1 mx-auto">
+      <img src="saurav.jpg" alt="Saurav Kumar" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
+      <h3 class="text-md font-semibold text-pink-700">Saurav Kumar</h3>
+      <p class="text-gray-600 text-xs italic">IT Head</p>
+      <p class="text-gray-700 text-sm mt-1">Handles all digital platforms and web presence.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Script to toggle visibility -->
 <script>
-  function openModal(imgSrc) {
-    document.getElementById("modalImage").src = imgSrc;
-    document.getElementById("imageModal").classList.remove("hidden");
-  }
-  function closeModal() {
-    document.getElementById("imageModal").classList.add("hidden");
+  function toggleTeam() {
+    document.getElementById('teamSection').classList.toggle('hidden');
   }
 </script>
-<!--about section end here-->
 
   <!-- Services Section -->
 <section class="py-20 px-8 text-center" style="background-color: #FFAB5B;">
