@@ -45,8 +45,7 @@
    <!-- Overlay Content -->
   <div class="relative z-10 bg-black bg-opacity-75 h-full flex items-center justify-center text-white">
     <div class="text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">Turning Your Dream Wedding into Reality</h1>
-      <a href="#contact" class="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-full text-lg transition">Book a Consultation</a>
+     
     </div>
   </div>
 </header> 
@@ -115,7 +114,7 @@
     <div class="bg-white p-4 rounded-xl shadow-md">
       <img src="upanshu.jpeg" alt="Upanshu Singh" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
       <h3 class="text-md font-semibold text-pink-700">Upanshu Singh</h3>
-      <p class="text-gray-600 text-xs italic">General Manager</p>
+      <p class="text-gray-600 text-xs italic">Managing Director</p>
       <p class="text-gray-700 text-sm mt-1">Ensures seamless execution across all event sections.</p>
     </div>
 
@@ -123,7 +122,7 @@
     <div class="bg-white p-4 rounded-xl shadow-md">
       <img src="sahil.jpeg" alt="Sahil Kumar" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
       <h3 class="text-md font-semibold text-pink-700">Sahil Kumar</h3>
-      <p class="text-gray-600 text-xs italic">Management</p>
+      <p class="text-gray-600 text-xs italic">Event Manager</p>
       <p class="text-gray-700 text-sm mt-1">Manages everything from logistics to client experience.</p>
     </div>
 
@@ -141,6 +140,22 @@
       <h3 class="text-md font-semibold text-pink-700">Saurav Kumar</h3>
       <p class="text-gray-600 text-xs italic">IT Head</p>
       <p class="text-gray-700 text-sm mt-1">Handles all digital platforms and web presence.</p>
+    </div>
+
+    <!-- Priya Singh-->
+       <div class="bg-white p-4 rounded-xl shadow-md col-span-full sm:col-span-2 md:col-span-1 mx-auto">
+      <img src="saurav.jpg" alt="Priya Singh" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
+      <h3 class="text-md font-semibold text-pink-700">Priya Singh</h3>
+      <p class="text-gray-600 text-xs italic">HR Head</p>
+      <p class="text-gray-700 text-sm mt-1">Focused on fostering a productive workplace cultureand aligning talent with business goals.</p>
+    </div>
+
+    <!--Misti priya-->
+       <div class="bg-white p-4 rounded-xl shadow-md col-span-full sm:col-span-2 md:col-span-1 mx-auto">
+      <img src="saurav.jpg" alt="Misti Priya" class="w-20 h-20 object-cover rounded-full mx-auto mb-2" />
+      <h3 class="text-md font-semibold text-pink-700">Misti Priya</h3>
+      <p class="text-gray-600 text-xs italic">Event Coordinator</p>
+      <p class="text-gray-700 text-sm mt-1"> Organizing seamless, memorable events with attention to detail and creativity.</p>
     </div>
 
   </div>
@@ -432,58 +447,85 @@
   </div>
 </section>
 
-    <div class="flex flex-col md:flex-row gap-8">
+    
+      <!-- Contact Form -->
+ div class="flex flex-col md:flex-row justify-center items-center gap-8 py-12 px-4 bg-gray-100">
 
-      <!-- Contact Cards -->
-      <div class="w-full md:w-1/3 bg-white p-6 md:p-8 rounded-xl shadow-xl" data-aos="fade-right">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center border-b pb-2">📞 Direct Contacts</h3>
-        <ul class="space-y-4 text-base text-gray-700">
-          <li class="flex justify-between">
-            <span>Rahul Yadav</span>
-            <a href="tel:7970777399" class="text-pink-600 hover:text-pink-800 transition">7970777399</a>
-          </li>
-          <li class="flex justify-between">
-            <span>Saurav Kumar</span>
-            <a href="tel:7635014550" class="text-pink-600 hover:text-pink-800 transition">7635014550</a>
-          </li>
-          <li class="flex justify-between">
-            <span>Ravi Raj</span>
-            <a href="tel:8529757818" class="text-pink-600 hover:text-pink-800 transition">8529757818</a>
-          </li>
-        </ul>
+ 
+  <form
+    id="contactForm"
+    action="https://formsubmit.co/sauravkumar63345@email.com"
+    method="POST"
+    class="w-full md:w-2/3 lg:w-1/2 bg-white p-6 md:p-8 rounded-xl shadow-xl mx-auto"
+    data-aos="fade-left"
+  >
+    <h2 class="text-2xl font-bold text-center text-pink-600 mb-4">Contact Us</h2>
+    <div class="grid grid-cols-1 gap-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+        <input
+          type="text"
+          name="name"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input
+          type="email"
+          name="email"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"
+        />
       </div>
 
-      <!-- Contact Form -->
-      <form id="contactForm" action="https://formsubmit.co/sauravkumar63345@email.com" method="POST" class="w-full md:w-2/3 bg-white p-6 md:p-8 rounded-xl shadow-xl" data-aos="fade-left">
-        <div class="grid grid-cols-1 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Event Date</label>
-            <input type="date" name="event_date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-            <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"></textarea>
-          </div>
-        </div>
-        <button id="submitBtn" type="submit" disabled class="mt-6 w-full bg-red-500 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 disabled:cursor-not-allowed">
-          Send Inquiry
-        </button>
-      </form>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Mobile No</label>
+        <input
+          type="mobile no"
+          name="mobile no"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Event Date</label>
+        <input
+          type="date"
+          name="event_date"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea
+          name="message"
+          rows="4"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:outline-none transition"
+        ></textarea>
+      </div>
     </div>
+    <button
+      id="submitBtn"
+      type="submit"
+      disabled
+      class="mt-6 w-full bg-red-500 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 disabled:cursor-not-allowed"
+    >
+      Send Inquiry
+    </button>
+  </form>
 
-    <!-- Alert -->
-    <div id="successAlert" class="hidden mt-6 text-center">
-      <p class="text-green-700 bg-green-100 inline-block px-6 py-2 rounded shadow">✅ Message sent successfully!</p>
-    </div>
+  <!-- Alert -->
+  <div id="successAlert" class="hidden mt-6 text-center">
+    <p class="text-green-700 bg-green-100 inline-block px-6 py-2 rounded shadow">
+      ✅ Message sent successfully!
+    </p>
   </div>
+
+</div>
 </section>
 
 <!-- JS: Form Validation & Success Alert -->
